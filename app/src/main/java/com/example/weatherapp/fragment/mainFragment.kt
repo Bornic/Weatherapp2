@@ -46,7 +46,7 @@ class mainFragment : Fragment() {
     private lateinit var pLauncher: ActivityResultLauncher<String>
     private lateinit var binding: FragmentMainBinding
     private val model: MainViewModel by activityViewModels()
-    val git = ""
+
 
 
     override fun onCreateView(
