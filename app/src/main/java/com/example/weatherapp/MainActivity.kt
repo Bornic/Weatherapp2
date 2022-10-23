@@ -9,7 +9,12 @@ import com.android.volley.toolbox.Volley
 import com.example.weatherapp.databinding.ActivityMainBinding
 import com.example.weatherapp.fragment.mainFragment
 import org.json.JSONObject
+/*
+использовалось для отладки сейчас он не нужен
+не стал удалять
 
+
+ */
 const val API_KEY = "1ad5b8e48b3a3dc7c36f50be50ae7e0b"
 
 class MainActivity : AppCompatActivity() {

@@ -1,5 +1,6 @@
 package com.example.weatherapp.adapters
 
+// массив для заполнения данных после парсинга
 data class WeatherModel(
     val city: String,
     val date_weather: String,

@@ -13,7 +13,7 @@ import com.example.weatherapp.R
 import com.example.weatherapp.adapters.WeatherAdapter
 import com.example.weatherapp.databinding.FragmentDayBinding
 
-
+//отображение данных на неделю
 class Week : Fragment() {
     private lateinit var adapter: WeatherAdapter
     private lateinit var binding: FragmentDayBinding

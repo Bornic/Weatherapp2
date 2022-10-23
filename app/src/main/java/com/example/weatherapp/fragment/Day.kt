@@ -15,7 +15,7 @@ import com.example.weatherapp.databinding.FragmentDayBinding
 import org.json.JSONArray
 import org.json.JSONObject
 
-
+//отображение данных по часам
 class Day : Fragment() {
 
     private lateinit var binding: FragmentDayBinding
@@ -46,7 +46,7 @@ class Day : Fragment() {
 
 
     }
-
+    //получение данных по часам прогноза
     private fun getHoursList(witem:WeatherModel): List<WeatherModel>{
         val hoursArray = JSONArray(witem.hours)
         val list = ArrayList<WeatherModel>()

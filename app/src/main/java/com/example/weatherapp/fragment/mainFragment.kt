@@ -87,12 +87,12 @@ class mainFragment : Fragment() {
         }
 
     }
-
+    //проверка включен ли gps
     private fun isLocationEnabled(): Boolean{
         val lm = activity?.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         return lm.isProviderEnabled(LocationManager.GPS_PROVIDER)
     }
-
+    //получение местоположения
     private fun getLocation(){
         if (!isLocationEnabled()) {
             Toast.makeText(requireContext(), "Location disabled", Toast.LENGTH_SHORT).show()
@@ -126,7 +126,7 @@ class mainFragment : Fragment() {
 
         }
     }
-
+    //включена ли геолокация
     private fun permissionListener(){
         pLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()){
             Toast.makeText(activity, "Permission is $it", Toast.LENGTH_LONG).show()
@@ -140,7 +140,7 @@ class mainFragment : Fragment() {
 
         }
     }
-
+    //получение json от api
     private fun requestWeatherData(city:String){
         val url="https://api.weatherapi.com/v1/forecast.json?key=$API_KEY&q=" +
                 city +
@@ -166,7 +166,7 @@ class mainFragment : Fragment() {
         val list = parseDays(mainObject)
         parseCurrentData(mainObject, list[0])
     }
-
+    //парсинг json для отображения погоды по часам
     private fun parseDays(mainObject: JSONObject): List<WeatherModel>{
         val list = ArrayList<WeatherModel>()
         val daysArray = mainObject.getJSONObject("forecast").getJSONArray("forecastday")
@@ -189,7 +189,7 @@ class mainFragment : Fragment() {
     }
 
 
-
+    // парсинг json
     private fun parseCurrentData(mainObject: JSONObject, weatherItem: WeatherModel){
         val item = WeatherModel(
             mainObject.getJSONObject("location").getString("name"),
